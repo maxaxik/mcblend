@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Glossary - Mcblend</title>
+        <title>Panels - Mcblend</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User manual <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -49,7 +49,7 @@
 </li>
                                     
 <li>
-    <a href="../panels/" class="dropdown-item">Panels</a>
+    <a href="./" class="dropdown-item active">Panels</a>
 </li>
                                 </ul>
                             </li>
@@ -61,6 +61,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../conversion_rules/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -79,13 +89,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#glossary" class="nav-link">Glossary</a>
+            <li class="nav-item" data-level="1"><a href="#panels" class="nav-link">Panels</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#mcbones-and-mccubes" class="nav-link">Mcbones and mccubes</a>
+            <li class="nav-item" data-level="2"><a href="#custom-properties-panel" class="nav-link">Custom properties panel</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#list-of-custom-object-properties-used-by-the-plug-in" class="nav-link">List of custom object properties used by the plug-in</a>
+            <li class="nav-item" data-level="2"><a href="#set-bedrock-uvs-panel" class="nav-link">Set bedrock UVs panel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#export-bedrock-model-panel" class="nav-link">Export bedrock model panel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#export-bedrock-animation-panel" class="nav-link">Export bedrock animation panel</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -96,24 +114,77 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="glossary">Glossary</h1>
-<h2 id="mcbones-and-mccubes">Mcbones and mccubes</h2>
-<p>To avoid confusion minecraft bones and cubes will be called mcbones and mccubes
-respectively.</p>
+<h1 id="panels">Panels</h1>
+<h2 id="custom-properties-panel">Custom properties panel</h2>
+<p>This panel adds easy acces for managing some of the custom properties used by
+the plugin.</p>
+<p><img alt="" src="../../img/custom_properties_panel.png" /></p>
+<p><strong>Usage</strong></p>
 <ul>
-<li>mcbone - a bone in minecraft model (bones in a rig in blender are called just
-bones).</li>
-<li>mccube - a cube in minecraft model (part of a mcbone).</li>
+<li><strong>Toggles mc_mirror</strong> - Toggles <code>mc_mirror</code> property for selected object.
+  Objects that has <code>mc_mirror</code> property create cubes with mirrored uv.</li>
+<li><strong>Set mc_uv_group</strong> - Groups selected object together which affects the
+  UV-mapping. Object asigned to the same <code>mc_uv_group</code> are mapped to the same
+  spot on the texture if they have the same dimensions.</li>
+<li><strong>Toggle mc_is_bone</strong> - Toggles <code>mc_is_bone</code> property for selected objects.
+  object whit this property are exported as bones in Minecraft model.</li>
+<li><strong>Set mc_inflate</strong> - Set the <code>mc_inflate</code> vale for selected objects. This is
+  equivalent to setting the inflate value in Minecraft model.</li>
 </ul>
-<h2 id="list-of-custom-object-properties-used-by-the-plug-in">List of custom object properties used by the plug-in</h2>
+<h2 id="set-bedrock-uvs-panel">Set bedrock UVs panel</h2>
+<p>This panel is used for creating UV-mapping for the model and generating
+template textures.</p>
+<p><img alt="" src="../../img/set_bedrock_uvs_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<p>By default all of the cubes in the model have the [0, 0] uv-mapping.
+The uv mapping vlaues of each object are stored in <code>mc_uv</code> custom property.</p>
+<p>To perform the uv-mapping set the values in the form and press "Set minecraft
+UVs"</p>
 <ul>
-<li>mc_parent - points to an parent object in mcmodel.</li>
-<li>mc_uv_group - used to group cubes with same width, depth and height to assign
-same uv-mapping to them.</li>
-<li>mc_uv - U and V value of mcmodel uv-mapping.</li>
-<li>mc_is_bone - if exists it marks an object as a mcbone.</li>
-<li>mc_inflate - the inflate value of mc_cube in minecraft model.</li>
-</ul></div>
+<li><strong>Texture width</strong> - the texture width property of the Minecraft model.</li>
+<li><strong>Texture height</strong> - the texture height property of the Minecraft model.
+  If you sent this property to 0 the texture height will be selected
+  automatically to fit all textures as tight as possible.</li>
+<li><strong>Move existing mcUv mappings</strong> - this chceckbox decides if the cubes that
+  already have assigned uv-mapping values can be moved.</li>
+<li><strong>Move blender UV mappings</strong> - this checkbox decides if blender objects
+  should have their UV-mapping moved to match the minecraft model.</li>
+<li><strong>Remove old UV maps</strong> - objects in blender can have multiple UV mpas but
+  only one of them is visible. Ticking this box causes that old uv-maps are
+  removed when the new one is created.</li>
+<li><strong>Template resolution</strong> - Sets the resolution of the template texture. If you
+  set this to 0 than the template texture won't be created. This value
+  describes how many pixels on the image is represented by one texture_widht or
+  texture_height unit in model definition. The value 1 gives the standard
+  Minecraft texture resolution. Higher values can be used to create "HD"
+  textures.</li>
+<li><strong>Set minecraft UVs</strong> button runs the operator which plans the UV-mapping and
+  optionally creates the template texture.</li>
+</ul>
+<h2 id="export-bedrock-model-panel">Export bedrock model panel</h2>
+<p>This panel is used for exporting the models.</p>
+<p><img alt="" src="../../img/export_model_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<ol>
+<li>Set the model to its neutral pose. Use frame 0 (frame before
+  the animation starts) and add a keyframe with neutral model position to it.</li>
+<li>Select all of the objects that you want to export.</li>
+<li>Insert the name of the model.</li>
+<li>Press the "Export model" button.</li>
+</ol>
+<h2 id="export-bedrock-animation-panel">Export bedrock animation panel</h2>
+<p>This panel is used for exporting animations.</p>
+<p><img alt="" src="../../img/export_animation_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<ol>
+<li>Select all of the objects to export.</li>
+<li>Insert the name of the animation.</li>
+<li>If you want loop the animation select the "loop" checkbox.</li>
+<li>If you want to use the <code>anim_time_update</code> property of minecraft animation
+  insert its value to a proper textfield. You can leave it blank if you don't
+  want to use it.</li>
+<li>Press "Export animation" button.</li>
+</ol></div>
             </div>
         </div>
 
