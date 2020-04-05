@@ -51,6 +51,10 @@
 <li>
     <a href="../panels/" class="dropdown-item">Panels</a>
 </li>
+                                    
+<li>
+    <a href="../tips/" class="dropdown-item">Tips and tricks</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -115,14 +119,15 @@
 <p><img alt="" src="../../img/mcblend_gui_image.png" /></p>
 <p>After installation and enabling the add-on there should be an additional tab
 called "Mcblend" on the right side of 3d-viewport (default key to open/close
-the sidebar in Blender is N). Opening this tab reveals panels which are used
-to accesss most of the functionallity of the addon. Every panel is described
+the sidebar in Blender is N). Opening this tab reveals panels that are used
+to access most of the functionality of the addon. Every panel is described
 further in the user manual in <a href="../panels/">panels</a> section.</p>
-<p>Additionally you can find some new options in <code>File -&gt; Export</code> menu.</p>
+<p>Additionally, you can find some new options in the <code>File -&gt; Export</code> menu.</p>
 <h2 id="limitations">Limitations</h2>
-<p>Minecraft bedrock edition modles support only cuboids.You cannont use other
+<h3 id="cuboids-only">Cuboids only</h3>
+<p>Minecraft bedrock edition models support only cuboids. You cannot use other
 shapes for your model. Mcblend uses bounding boxes to create cuboids for
-exported model.</p>
+the exported model.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The best way to avoid problems with invalid meshes is to always use
@@ -130,16 +135,24 @@ blenders "Object mode" for editing the model. Additionally you can enable
 drawing the bounding box in object
 <code>Object properties -&gt; Viewport display -&gt; Bounds</code></p>
 </div>
+<h3 id="names">Names</h3>
+<p>The addon does not allow the usage of names that have dots in it. Everything
+after the first dot in the name of the object is ignored during the conversion.
+You can use dots in the names of the objects which aren't converted into bones
+for the Minecraft model. Conversion rules are described in the
+<a href="../conversion_rules/">next</a> section of the user manual.</p>
 <h2 id="custom-properties">Custom properties</h2>
-<p>Mcblend uses custom object properties to store some data about minecraft model:</p>
+<p>Mcblend uses custom object properties to store some data about the Minecraft
+model:</p>
 <ul>
-<li><code>mc_uv_group</code> - used to group cubes with same width, depth and height to assign
-  same uv-mapping to them.</li>
-<li><code>mc_uv</code> - U and V value of mcmodel uv-mapping.</li>
-<li><code>mc_is_bone</code> - if exists it marks an object as a minecraft bone.</li>
-<li><code>mc_inflate</code> - the inflate value of cube in minecraft model.</li>
+<li><code>mc_uv_group</code> - used to group cubes with the same width, depth and height to
+  assign same UV-mapping to them.</li>
+<li><code>mc_uv</code> - U and V value of Minecraft UV-mapping.</li>
+<li><code>mc_is_bone</code> - marks an object as a Minecraft bone.</li>
+<li><code>mc_inflate</code> - the "inflate" value of cube in the Minecraft model.</li>
+<li><code>mc_mirror</code> - marks that the object has the "mirror" property set to true.</li>
 </ul>
-<p>You can view the these porperties in <code>Object properties -&gt; Custom properties</code></p>
+<p>You can view these properties in <code>Object properties -&gt; Custom properties</code></p>
 <p><img alt="" src="../../img/custom_properties.png" /></p></div>
             </div>
         </div>

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Conversion rules - Mcblend</title>
+        <title>Tips and tricks - Mcblend</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Conversion rules</a>
+    <a href="../conversion_rules/" class="dropdown-item">Conversion rules</a>
 </li>
                                     
 <li>
@@ -53,7 +53,7 @@
 </li>
                                     
 <li>
-    <a href="../tips/" class="dropdown-item">Tips and tricks</a>
+    <a href="./" class="dropdown-item active">Tips and tricks</a>
 </li>
                                 </ul>
                             </li>
@@ -66,12 +66,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../basics/" class="nav-link">
+                                <a rel="prev" href="../panels/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../panels/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -93,8 +93,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#conversion-rules" class="nav-link">Conversion rules</a>
+            <li class="nav-item" data-level="1"><a href="#tips-and-tricks" class="nav-link">Tips and tricks</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#framerate" class="nav-link">Framerate</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#world-unit-scale" class="nav-link">World unit scale</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#creating-material-for-the-minecraft-model" class="nav-link">Creating material for the Minecraft model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#multiple-animations" class="nav-link">Multiple animations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#renaming-objects" class="nav-link">Renaming objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -102,61 +122,83 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="conversion-rules">Conversion rules</h1>
-<p>There are no directly equivalent objects in blender models to Minecraft bedrock
-edition models. Mcblend uses a set of rules to decide which parts of the model
-should be converted into bones, locators or cubes in the Minecraft model.</p>
-<ol>
-<li>An empty or mesh with custom <code>is_mc_bone</code> property always creates a
-  a bone or a bone with cube respectively.</li>
-<li>A bone is converted into a bone unless it has no children and no
-  parents. In this case it isn't converted at all. This behavior is to prevent
-  the conversions of inverse kinematics bones.</li>
-<li>An empty becomes a bone unless it has a parent but no children. In this case
-  it creates a locator.</li>
-<li>Mesh without parent becomes a bone with a cube inside it. Mesh with a parent
-  becomes a cube.</li>
-</ol>
-<h3 id="the-same-set-of-rules-as-a-table">The same set of rules as a table</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th><code>is_mc_bone</code> property</th>
-<th>no parent, no children</th>
-<th>parent, no children</th>
-<th>no parent,children</th>
-<th>parent and children</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Bone</strong></td>
-<td>N/A*</td>
-<td>NONE</td>
-<td>bone</td>
-<td>bone</td>
-<td>bone</td>
-</tr>
-<tr>
-<td><strong>Empty</strong></td>
-<td>bone</td>
-<td>bone</td>
-<td>locator</td>
-<td>bone</td>
-<td>bone</td>
-</tr>
-<tr>
-<td><strong>Mesh</strong></td>
-<td>bone &amp; cube</td>
-<td>bone &amp; cube</td>
-<td>cube</td>
-<td>bone &amp; cube</td>
-<td>cube</td>
-</tr>
-</tbody>
-</table>
-<p>*<em>bones can't have <code>has_mc_bone</code> property</em></p></div>
+<h1 id="tips-and-tricks">Tips and tricks</h1>
+<p>This is a list of tips and tricks related to Mcbled. Some of them are related
+to the addon and some of them explain some basics of using blender which can be
+useful for working with Mcblend.</p>
+<h2 id="framerate">Framerate</h2>
+<p>By default blender uses 24FPS framerate. Minecraft uses seconds to define
+the timestamps of keyframes in animation. It's good to change the framerate setting
+into something that divides 1 second period into something nice - for example
+(25FPS or 20FPS). 1/24 is 0.0416666 but 1/25 is 0.04 which looks way better in the
+animation file.</p>
+<p>You can find the framerate setting in <code>Output Properties -&gt; Frame Rate</code>.</p>
+<p><img alt="" src="../../img/framerate_setting.png" /></p>
+<h2 id="world-unit-scale">World unit scale</h2>
+<p>By default 1m in your model is equal to one block in Minecraft. One meter
+Minecraft model is 16 pixels on the texture of the model. You might want to
+measure the size in pixels instead of meters. You can change the setting that
+you can find under <code>Scene properties -&gt; Unit scale</code>. Changing the value
+of this property to 16 will cause that one meter of your blender model will be
+converted into 1 pixel in Minecraft.</p>
+<p><img alt="" src="../../img/unit_scale_setting.png" /></p>
+<p>This setting is really useful because when you set it you can use the <code>Item</code>
+panel to track the dimensions of the object and make sure it has integer
+dimensions (non-integer dimensions may cause problems with UV-mapping).</p>
+<p><img alt="" src="../../img/integer_dimensions.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an object uses the inflate property the "Dimensions" panel doesn't show
+it's real Minecraft dimensions. In this case, the panel can't be used to
+check if the dimensions use integer values only.</p>
+</div>
+<h2 id="creating-material-for-the-minecraft-model">Creating material for the Minecraft model</h2>
+<p>Currently the addon doesn't create materials for your model during UV mapping
+and generating textures. When you create your UV map and texture template, it is
+not visible on your model. If you want to make the texture visible you have to
+create new material in shader editor and assign it to every object in your
+model.</p>
+<p><strong>1.</strong> Generate texture template using the <a href="../panels/">Set bedrock UV panel</a>.
+Remember to change the "Template resolution" setting a to value greater than
+0 (1 is the standard Minecraft texture resolution).</p>
+<p><img alt="" src="../../img/set_bedrock_uvs_panel.png" /></p>
+<p><strong>2.</strong> Go to the shading tab and create new material.</p>
+<p><img alt="" src="../../img/shading_tab.png" /></p>
+<p><strong>3.</strong> Remove the <code>Principled BSDF</code> node and replace it with <code>Image Texture</code> node
+(<code>SHIFT + A</code> and search "Image Texture"). Connect the node to material output
+just like on the image. Set interpolation setting to "Closest" and choose your
+texture under the image setting.</p>
+<p><img alt="" src="../../img/nodes.png" /></p>
+<p><strong>4.</strong> You don't have to create new material for every object. You can
+assign the material you use to other objects in your model. Select all of your
+objects and make sure that the object that uses your material is active.
+Go to <code>Material Properties</code> right click on the material and select "Copy to
+selected".</p>
+<p><img alt="" src="../../img/copy_material_to_selected.png" /></p>
+<h2 id="multiple-animations">Multiple animations</h2>
+<p>If you want to have multiple animations in your project you can copy the scene
+with your finished model and animate it there. Every scene has its
+animation length and Mcblend settings (like the name of the animation). You can
+create copies of a scene by pressing the new scene button (top right corner on
+default GUI layout).</p>
+<p><img alt="" src="../../img/new_scene.png" /></p>
+<p>You might have noticed that the names of your objects on the copied scene
+are not the same as the names of the originals. This is because they are
+different objects and every object has a unique name in Blender. Blender adds
+indexes to objects that try to use occupied names. Don't worry about it. Mcblend
+ignores everything after the first dot symbol in the object name. Your animations
+will be generated with the shortened names.</p>
+<h2 id="renaming-objects">Renaming objects</h2>
+<p>There is a consequence of ignoring parts of the names of the objects in blender
+object while exporting them to Minecraft format. This feature can cause that
+the names are not unique anymore. For example <code>Cube.001</code> and <code>Cube.002</code> are the
+same name for Mcblend. In case of name collision Mcblend shows a warning which
+tells you which object should be renamed.</p>
+<p>Usually, you should have descriptive unique names for everything but if your
+still want to have the automatically generated names with indices you can
+easily remove the dot symbol from names of the selected objects by using the
+"search and replace" function which can be accessed by
+pressing <code>CTRL + F2</code> (default key-bind setting).</p></div>
             </div>
         </div>
 
