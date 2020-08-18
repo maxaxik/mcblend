@@ -166,8 +166,8 @@ Remember to change the "Template resolution" setting a to value greater than
 <p><img alt="" src="../../img/shading_tab.png" /></p>
 <p><strong>3.</strong> Remove the <code>Principled BSDF</code> node and replace it with <code>Image Texture</code> node
 (<code>SHIFT + A</code> and search "Image Texture"). Connect the node to material output
-just like on the image. Set interpolation setting to "Closest" and choose your
-texture under the image setting.</p>
+just like on the image. Set interpolation setting to "Closest", the third
+setting to "Clip"  and choose your to texture under the image setting.</p>
 <p><img alt="" src="../../img/nodes.png" /></p>
 <p><strong>4.</strong> You don't have to create new material for every object. You can
 assign the material you use to other objects in your model. Select all of your
@@ -175,6 +175,11 @@ objects and make sure that the object that uses your material is active.
 Go to <code>Material Properties</code> right click on the material and select "Copy to
 selected".</p>
 <p><img alt="" src="../../img/copy_material_to_selected.png" /></p>
+<p>If you want to have a material that supports transparency than the nodes in
+the shading editor will need to have more complicated layout:</p>
+<p><img alt="" src="../../img/nodes_advanced.png" /></p>
+<p>You will also have to enable the transparency settings in the material configuration:</p>
+<p><img alt="" src="../../img/transparency_setting.png" /></p>
 <h2 id="multiple-animations">Multiple animations</h2>
 <p>If you want to have multiple animations in your project you can copy the scene
 with your finished model and animate it there. Every scene has its
@@ -227,7 +232,7 @@ pressing <code>CTRL + F2</code> (default key-bind setting).</p></div>
                 </p>
                 <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
