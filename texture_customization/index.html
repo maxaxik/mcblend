@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Texture customization (advanced) - Mcblend</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Texture customization (advanced)";
+    var mkdocs_page_input_path = "texture_customization\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mcblend</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../limitations/">Limitations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../conversion_rules/">Conversion rules</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../gui_changes/">GUI changes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../basic_operators/">Basic Operators</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../uv_groups/">UV-groups</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Texture customization (advanced)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#color-palette-mask">Color Palette Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gradient-mask">Gradient Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ellipse-mask">Ellipse Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rectangle-mask">Rectangle Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stripes-mask">Stripes Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#random-mask">Random Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#color-mask">Color Mask</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mix-mask">Mix Mask</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks/">Tips and tricks</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mcblend</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Texture customization (advanced)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="texture-customization-advanced">Texture customization (advanced)</h1>
+<p><img alt="" src="../../../img/customized_uv_groups.png" /></p>
+<p>You can customize the appearance of a UV-group by applying masks to its faces
+in new custom panel in <a href="../gui_changes/#scene-properties">Scene Properties</a>.</p>
+<p>Masks are filters that are applied to the texture when it is generated.
+Each UV-group has 6 faces. You can switch between faces to edit with
+"Side:" dropdown menu. The image below shows how the names of the
+sides (side1-6) are corelated to their placement on the texture.</p>
+<p><img alt="" src="../../../img/faces.png" /></p>
+<p>New masks are added with "Add mask" dropdown menu. There are 8 different types
+of masks.</p>
+<h2 id="color-palette-mask">Color Palette Mask</h2>
+<p><img alt="" src="../../../img/color_palette_mask.png" /></p>
+<p>This mask takes the grayscale image as an input and maps its brightness values
+to a color image with a palette defined as a list of colors.</p>
+<p>Properties:</p>
+<ul>
+<li>Colors - list of colors in the palette</li>
+<li>Interpolate - whether there should be a smooth transition between the colors
+    on the palette.</li>
+<li>Normalize - normalizes the input values so that the whole color palette is
+    used.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When input image is not grayscale than it gets converted to grayscale
+before applying the mask.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Color palette mask is the only mask which can't be used inside the Mix
+Mask. If you put this mask into mix mask it will have no effect.</p>
+</div>
+<h2 id="gradient-mask">Gradient Mask</h2>
+<p><img alt="" src="../../../img/gradient_mask.png" /></p>
+<p>The Gradient mask creates a grayscale gradient with stripes of varying darkness
+and width. The direction in which the stripes are drawn is defined with two
+points on the texture. The grayscale image is than multiplied by the input image.</p>
+<p>Properties:</p>
+<ul>
+<li>Point A - the starting point of drawing gradient stripes.</li>
+<li>Point B - the end point of drawing gradient stripes.</li>
+<li>Relative boundaries - whether points A and B should be passed as absolute
+    values (number of pixels from the lower left corner of the texture) or as a
+    fraction of the texture size (0.0 lower left corner, 1.0 upper right corner).
+    The absolute values can be negative, meaning they represent the number of
+    pixels from the top right corner (starting at -1).</li>
+<li>Stripes - the list of stripes in the gradient their colors (strengths) and
+    their widths. The widths define their placement on a line between points
+    A and B so in most cases the width of the first stripe is 0, which means
+    that this stripe should be drawn at the Point A.</li>
+<li>Exponent - the filter image is raised to the power of this value before it
+    is multiplied by the image.</li>
+</ul>
+<h2 id="ellipse-mask">Ellipse Mask</h2>
+<p><img alt="" src="../../../img/ellipse_mask.png" /></p>
+<p>Ellipse mask creates a grayscale image of ellipse that fits between Point A and
+Point B. The grayscale image is than multiplied by the input image.</p>
+<p>Properties:</p>
+<ul>
+<li>Point A and B - boundaries of the ellipse.</li>
+<li>Relative boundaries - whether points A and B should be passed as absolute
+    values (number of pixels from the lower left corner of the texture) or as a
+    fraction of the texture size (0.0 lower left corner, 1.0 upper right corner).
+    The absolute values can be negative, meaning they represent the number of
+    pixels from the top right corner (starting at -1).</li>
+<li>Exponent - the filter image is raised to the power of this value before it
+    is multiplied by the image.</li>
+<li>Strength - the min and max values of brightness of created filter image.</li>
+<li>Hard edge - whether the ellipse should have hard edges or the brightness
+    of the inner part of the ellipse should be smoothly interpolated to 
+    the edges of the image.</li>
+</ul>
+<h2 id="rectangle-mask">Rectangle Mask</h2>
+<p><img alt="" src="../../../img/rectangle_mask.png" /></p>
+<p>Rectangle mask creates a grayscale image of rectangle between Point A and
+Point B. The grayscale image is than multiplied by the input image.</p>
+<p>Properties:</p>
+<ul>
+<li>Point A and B - opposite corners of the rectangle.</li>
+<li>Relative boundaries - whether points A and B should be passed as absolute
+    values (number of pixels from the lower left corner of the texture) or as a
+    fraction of the texture size (0.0 lower left corner, 1.0 upper right corner).
+    The absolute values can be negative, meaning they represent the number of
+    pixels from the top right corner (starting at -1).</li>
+<li>Exponent - the filter image is raised to the power of this value before it
+    is multiplied by the image.</li>
+<li>Strength - the min and max values of brightness of created filter image.</li>
+<li>Hard edge - whether the rectangle should have hard edges or the brightness
+    of the inner part of the rectangle should be smoothly interpolated to 
+    the edges of the image.</li>
+</ul>
+<h2 id="stripes-mask">Stripes Mask</h2>
+<p><img alt="" src="../../../img/stripes_mask.png" /></p>
+<p>Rectangle mask creates a grayscale image with repeating stripes of certain
+width and brightness. The grayscale image is than multiplied by the input
+image.</p>
+<p>Properties:</p>
+<ul>
+<li>Relative boundaries - whether the width of the stripes is expressed as a
+    fraction of the image width / height.</li>
+<li>Stripes - the list of the stripes, their width and their brightness.</li>
+<li>Horizontal - whether the stripes should be vertical or horizontal.</li>
+</ul>
+<h2 id="random-mask">Random Mask</h2>
+<p><img alt="" src="../../../img/random_mask.png" /></p>
+<p>Random mask creates a grayscale image with randomly bright pixels. The
+grayscale image is than multiplied by the input image.</p>
+<ul>
+<li>Exponent - the filter image is raised to the power of this value before it
+    is multiplied by the image.</li>
+<li>Strength - the min and max brightness values of the pixels on the filter
+    image.</li>
+<li>Use seed - allows you to set the seed for the color randomization.</li>
+</ul>
+<h2 id="color-mask">Color Mask</h2>
+<p><img alt="" src="../../../img/color_mask.png" /></p>
+<p>Color mask multiplies the input mask by a color.</p>
+<h2 id="mix-mask">Mix Mask</h2>
+<p><img alt="" src="../../../img/mix_mask.png" /></p>
+<p>Mix mask lets you mix multiple masks in different way than just default
+multiplication. </p>
+<p>Properties:</p>
+<ul>
+<li>Exponent - the filter image is raised to the power of this value before it
+    is multiplied by the image.</li>
+<li>Strength - the min and max values of the brightness of returned filter image.
+    The filter image brightness values are mapped to fit on the scale between
+    values defined with "strength"</li>
+<li>Mix mode - how to mix filter images produced by other masks. There are 4
+    options: min, max, mean and median.</li>
+<li>Number of children - Number of mixed masks.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mix mask ignores the color palette masks because color palette mask does
+not create a filter image (it just alters the image from the input).</p>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tips_and_tricks/" class="btn btn-neutral float-right" title="Tips and tricks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../uv_groups/" class="btn btn-neutral" title="UV-groups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../uv_groups/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tips_and_tricks/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

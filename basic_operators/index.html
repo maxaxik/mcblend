@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Basic Operators - Mcblend</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Basic Operators";
+    var mkdocs_page_input_path = "basic_operators\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mcblend</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../limitations/">Limitations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../conversion_rules/">Conversion rules</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../gui_changes/">GUI changes</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Basic Operators</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#importing-models">Importing models</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exporting-models">Exporting models</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exporting-animations">Exporting animations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uv-mapping">UV-mapping</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modifying-mcblend-properties">Modifying Mcblend properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#toggle-mirror-for-uv-mapping">Toggle mirror for UV mapping</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-the-uv-group">Set the UV group</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clear-the-uv-group">Clear the UV group</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#toggle-export-as-bones">Toggle export as bones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inflate">Inflate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#round-dimensions">Round dimensions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../uv_groups/">UV-groups</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../texture_customization/">Texture customization (advanced)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks/">Tips and tricks</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mcblend</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Basic Operators</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="basic-operators">Basic operators</h1>
+<p>All of the basic operators are in the sidebar.</p>
+<h2 id="importing-models">Importing models</h2>
+<p>This panel is used for importing bedrock models from JSON files.</p>
+<p><img alt="" src="../img/import_model_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<ol>
+<li>Press the "Import model" button.</li>
+<li>Set the import properties on the right side of the file explorer.<ul>
+<li>"Geometry name" lets you specify the name of the model that you want
+  to import from the file. You can leave it blank to import the first
+  model from the list. Don't add <code>geometry.</code> prefix to the model name
+  (it's added automatically).</li>
+<li>"Replace bones with empties" checkbox decides whether the model should
+  be imported using empties to represent Minecraft bones (checked) or an
+  armature and bones (unchecked, default value).</li>
+</ul>
+</li>
+<li>Find the model file in the file explorer and press import model to finalize
+  the importing.</li>
+</ol>
+<p><img alt="" src="../img/import_model_file_explorer.png" /></p>
+<p>The import model operator can also be accessed via <code>File -&gt; Import</code> menu.</p>
+<h2 id="exporting-models">Exporting models</h2>
+<p>The "Export models" panel is used to export models. You can set the
+name and visible model bounds here. Exported model will automatically add
+the <code>geometry.</code> prefix to the name so you don't have to do that.</p>
+<p><img alt="" src="../img/export_model_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<ol>
+<li>Select all of the objects that you want to export.</li>
+<li>Insert the name of the model.</li>
+<li>Press the "Export model" button.</li>
+<li>Choose the output path in the file explorer window.</li>
+</ol>
+<p>The export model operator can also be accessed via <code>File -&gt; Export</code> menu.</p>
+<h2 id="exporting-animations">Exporting animations</h2>
+<p>Exporting animations is done with "Export bedrock animations" panel.</p>
+<p><img alt="" src="../img/export_animation_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<ol>
+<li>Create new animation with "New animation" button (some of the parts of
+  panel won't be visible until you have an animations). You may have as
+  many animation settings saved as you want and you can switch between them
+  with "Select animation" dropdown menu.</li>
+<li>Select the objects to export in the 3d viewport.</li>
+<li>Fill in the form with the information about the animation.</li>
+<li><strong>Name</strong> - the name of the animation.</li>
+<li><strong>Loop</strong> - whether the animation should be looped.</li>
+<li><strong>Current frame only</strong> - instead of exporting animation exports the
+    current frame as looped single frame pose animation.</li>
+<li><strong>anim_time_update</strong> - the content of this textfield is copied to
+    "anim_time_update" property of the Minecraft animtion. If you leave it
+    blank the the animation won't use the anim_time_update.</li>
+<li>Press the "Export animation" button.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The time of the animation is determined by the time of animation
+that you can set in the timeline. The animations should always start
+at frame 1. Frame 0 should have the model in the default pose.</p>
+</div>
+<h2 id="uv-mapping">UV-mapping</h2>
+<p>UV-mapping is performed via "Set bedrock UVs" panel. You can also use this
+panel for generating textures.</p>
+<p><img alt="" src="../img/set_bedrock_uvs_panel.png" /></p>
+<p><strong>Usage</strong></p>
+<p>To perform the UV-mapping fill in the form and press the "Set Minecraft
+UVs" button.</p>
+<ul>
+<li><strong>Texture width</strong> - the texture_width property of the Minecraft model.</li>
+<li><strong>Texture height</strong> - the texture_height property of the Minecraft model.</li>
+<li><strong>Allow texture expanding</strong> - whether the texture can be expanded if there
+  is no space for UV-mapping.</li>
+<li><strong>Generate Texture</strong> - whether the operator should generate a texture (
+  the name of the created texture is always "template")</li>
+<li><strong>Template resolution</strong> - Sets the resolution of the template texture. This
+  value describes how many pixels on the image is represented by one
+  texture_widht or texture_height unit in the model definition. The value 1
+  gives the standard Minecraft texture resolution. Higher values can be used
+  to create "HD textures".</li>
+</ul>
+<p>You can adjust the UV-mapping using <a href="../uv_groups/">UV-groups</a> to get best.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After the UV mapping, you can still go to the UV editor and move everything
+to your liking. This operator tries to arrange the UVs of the selected
+objects on the texture space using the basic non-per-face Minecraft
+UV-mapping. If you move the UV in such a way that it cannot be mapped
+in standard Minecraft UV-mapping way than mcblend will detect that
+and uses per-face UV mapping.</p>
+<p>Don't move individual vertices of the faces on the UV unless you know what
+you're doing. The faces on the UV must remain rectangles, or the UV of the
+exported model may have unexpected shapes.</p>
+</div>
+<h2 id="modifying-mcblend-properties">Modifying Mcblend properties</h2>
+<p>The "Operators" panel gives access to operators that modify various
+properties used by Mcblend.</p>
+<p><img alt="" src="../img/operators_panel.png" /></p>
+<h3 id="toggle-mirror-for-uv-mapping">Toggle mirror for UV mapping</h3>
+<p>Toggles the mirror property of selected
+objects.</p>
+<p>The mirror property affects the process of UV-mapping. Objects with
+this property are mapped as if they had the Minecraft mirror property.
+Using this operator doesn't remap the UV. If you want to change
+the UV of the object, you must also use the operator from the
+<a href="#uv-mapping">Set bedrock UVs</a> panel to update the UVs.</p>
+<h3 id="set-the-uv-group">Set the UV group</h3>
+<p>Adds selected objects to one of the existing <a href="../uv_groups">UV-groups</a>.</p>
+<h3 id="clear-the-uv-group">Clear the UV group</h3>
+<p>Removes selected objects from UV-groups.</p>
+<h3 id="toggle-export-as-bones">Toggle export as bones</h3>
+<p>Toggles the export bone property of selected objects.</p>
+<p>Objects with this property are always exported as bones. Mcblend usually tries
+to export most meshes as cubes and groups them together with some parent
+object that becomes a bone. If you want to mark a certain cube as an
+independent bone, you need to use this operator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The best way of using Mcblend is to have one rig for the model and
+parenting the meshes to bones of that rig. This allows you to take the
+advantage of features like inverse kinematics and also creates a
+model in which it's really easy to distinguish which Blender object becames
+what in Minecraft model. Bones will be translated into Minecraft
+bones and meshes into cubes. If you add some empties without children
+they will become the locators.</p>
+</div>
+<h3 id="inflate">Inflate</h3>
+<p>Inflates the selected object using Minecraft inflate property.</p>
+<p>Running this operator opens a panel in the bottom left corner of the 3D
+viewport. You can use this panel to adjust the "inflate" value.</p>
+<p><img alt="" src="../img/inflate_redo_panel.png" /></p>
+<h3 id="round-dimensions">Round dimensions</h3>
+<p>Rounds the dimensions of the object in such way that
+they become integers in exported Minecraft model.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../uv_groups/" class="btn btn-neutral float-right" title="UV-groups">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../gui_changes/" class="btn btn-neutral" title="GUI changes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../gui_changes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../uv_groups/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Limitations - Mcblend</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Limitations";
+    var mkdocs_page_input_path = "limitations\\index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mcblend</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Limitations</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cuboids-only">Cuboids only</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#no-wide-angles-in-animations">No wide angles in animations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#no-dots-in-names-names">No dots in names names</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../conversion_rules/">Conversion rules</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../gui_changes/">GUI changes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../basic_operators/">Basic Operators</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../uv_groups/">UV-groups</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../texture_customization/">Texture customization (advanced)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks/">Tips and tricks</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mcblend</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Limitations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="limitations">Limitations</h1>
+<h2 id="cuboids-only">Cuboids only</h2>
+<p>Minecraft Bedrock Edition models must only be made of cuboids (unless you are
+using an experimental feature that is not yet supported). You cannot use other
+shapes in your model.</p>
+<p>Each cube in the model must be a separate mesh. The mesh must be exactly the
+same shape as its bounding box. If the model shape is different from the
+bounding box, Mcblend may fail on export, and if not, the exported
+model will only be an approximation of what you see in the viewport.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The best way to avoid problems with invalid meshes is to always use the
+"Object mode" for editing the model and always scaling the cuboids in their
+local space.</p>
+<p>Additionally, you can enable drawing of an object boundary in:
+<code>Object properties -&gt; Viewport display -&gt; Bounds</code></p>
+</div>
+<h2 id="no-wide-angles-in-animations">No wide angles in animations</h2>
+<p>There must be no more than 180° rotation between two keyframes.</p>
+<p>This issue is caused by the way Mcblend computes Minecraft's rotations
+internally.</p>
+<p>Blender supports multiple rotation modes and uses different rotation types for
+different kinds of objects. For example, bone rotations in armatures use
+quaternions, but meshes use Euler angles. Additionally, users can choose
+different rotation modes for each object. Minecraft uses Euler angles, but the
+axes are set differently.</p>
+<p>Mcblend can export models and animations regardless of the rotation modes used,
+but internally everything is converted to quaternions / translation matrices.
+The design decision for the internal use of quaternions was motivated by the
+fact that quaternions help avoid some calculation errors.</p>
+<p>Unfortunately, the quaternion number system has only one unique representation
+for each rotation orientation, so one cannot distinguish full rotation from no
+rotation (360° == 0°).</p>
+<p>Therefore, you cannot use angles greater than 180° between two keyframes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A quick fix to this problem is adding additional keyframes for wide
+rotations.</p>
+</div>
+<h2 id="no-dots-in-names-names">No dots in names names</h2>
+<p>The add-on does not allow the use of names that have periods. Anything after
+the first dot in the object name is ignored during the conversion. You can use
+dots in the names of the objects that aren't converted to bones in exported 
+Minecraft model. The conversion rules are described in the
+<a href="../conversion_rules/">next</a> section of the user documentation.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../conversion_rules/" class="btn btn-neutral float-right" title="Conversion rules">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../conversion_rules/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
