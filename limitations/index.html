@@ -54,7 +54,7 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Limitations</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#cuboids-only">Cuboids only</a>
+    <li class="toctree-l2"><a class="reference internal" href="#every-cube-must-be-a-separate-blender-object">Every cube must be a separate Blender object</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#no-wide-angles-in-animations">No wide angles in animations</a>
     </li>
@@ -124,24 +124,16 @@
             <div class="section">
               
                 <h1 id="limitations">Limitations</h1>
-<h2 id="cuboids-only">Cuboids only</h2>
-<p>Minecraft Bedrock Edition models must only be made of cuboids (unless you are
-using an experimental feature that is not yet supported). You cannot use other
-shapes in your model.</p>
-<p>Each cube in the model must be a separate mesh. The mesh must be exactly the
-same shape as its bounding box. If the model shape is different from the
-bounding box, Mcblend may fail on export, and if not, the exported
-model will only be an approximation of what you see in the viewport.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The best way to avoid problems with invalid meshes is to always use the
-"Object mode" for editing the model and always scaling the cuboids in their
-local space.</p>
-<p>Additionally, you can enable drawing of an object boundary in:
-<code>Object properties -&gt; Viewport display -&gt; Bounds</code></p>
-</div>
+<h2 id="every-cube-must-be-a-separate-blender-object">Every cube must be a separate Blender object</h2>
+<p>If you are creating a traditional Minecraft model with all parts made out of
+cubes you mast make sure that every cube is an separate object (separate mesh).</p>
+<p>You can use the edit mode to rotate, scale and move your cubes to your preference
+however, they mast be separated before you export the model
+(see <em><a href="../basic_operators#separate-cubes">separate cubes operator</a></em>)</p>
+<p>If you don't want to be restricted to using only cuboids for your model you can
+also mark your objects as <a href="../gui_changes#object-properties">polymesh</a>.</p>
 <h2 id="no-wide-angles-in-animations">No wide angles in animations</h2>
-<p>There must be no more than 180° rotation between two keyframes.</p>
+<p>There must be no more than 180° rotation between two key frames.</p>
 <p>This issue is caused by the way Mcblend computes Minecraft's rotations
 internally.</p>
 <p>Blender supports multiple rotation modes and uses different rotation types for
@@ -156,18 +148,19 @@ fact that quaternions help avoid some calculation errors.</p>
 <p>Unfortunately, the quaternion number system has only one unique representation
 for each rotation orientation, so one cannot distinguish full rotation from no
 rotation (360° == 0°).</p>
-<p>Therefore, you cannot use angles greater than 180° between two keyframes.</p>
+<p>Therefore, you cannot use angles greater than 180° between two key frames
+because Mcblend will always try to export as short rotation as possible.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A quick fix to this problem is adding additional keyframes for wide
+<p>A quick fix to this problem is adding additional key frames for wide angle
 rotations.</p>
 </div>
 <h2 id="no-dots-in-names-names">No dots in names names</h2>
 <p>The add-on does not allow the use of names that have periods. Anything after
 the first dot in the object name is ignored during the conversion. You can use
-dots in the names of the objects that aren't converted to bones in exported 
+dots in the names of the objects that aren't converted to bones of exported 
 Minecraft model. The conversion rules are described in the
-<a href="../conversion_rules/">next</a> section of the user documentation.</p>
+<a href="../conversion_rules/">conversion rules</a> section of the user manual.</p>
               
             </div>
           </div>

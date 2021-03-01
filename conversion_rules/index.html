@@ -130,15 +130,20 @@ unexpected.</p>
 <ol>
 <li>An empty or mesh with custom
   <a href="../basic_operators/#toggle-export-as-bones"><em>export as bone</em></a> property
-  always creates a a bone or a bone with cube, respectively.</li>
+  always creates a a bone or a bone with cube/polymesh, respectively.</li>
 <li>A Blender bone is converted into a Minecraft bone unless it has no children
   and no parents. In this case it isn't converted at all. This behavior is to
   prevent the exporting of inverse kinematics bones.</li>
 <li>An empty becomes a bone unless it has a parent but no children. In this case
   it creates a locator.</li>
-<li>Mesh without parent becomes a bone with a cube inside. Mesh with a parent
-  becomes a cube.</li>
+<li>Mesh without parent becomes a bone with a cube/polymesh inside. Mesh with a parent
+  becomes a cube/polymesh.</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a href="../gui_changes#object-properties">mesh type</a> property decides whether
+the mesh should be exported as cube or polymesh.</p>
+</div>
 <p><strong>The conversion rules can also be represented with this table:</strong></p>
 <table>
 <thead>
@@ -170,11 +175,11 @@ unexpected.</p>
 </tr>
 <tr>
 <td><strong>Mesh</strong></td>
-<td>bone &amp; cube</td>
-<td>bone &amp; cube</td>
-<td>cube</td>
-<td>bone &amp; cube</td>
-<td>cube</td>
+<td>bone &amp; cube/polymesh</td>
+<td>bone &amp; cube/polymesh</td>
+<td>cube/polymesh</td>
+<td>bone &amp; cube/polymesh</td>
+<td>cube/polymesh</td>
 </tr>
 </tbody>
 </table>

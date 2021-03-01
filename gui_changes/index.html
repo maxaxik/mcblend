@@ -154,10 +154,32 @@ panels:</p>
 <p><img alt="" src="../img/uv_groups_panel.png" /></p>
 <h2 id="object-properties">Object properties</h2>
 <p>Object properties tab has new panel - <em>Mcblend object properties</em>.
-It lets you view and edit
-<a href="../basic_operators/#modifying-mcblend-properties">custom object properties</a>
-used by Mcblend.</p>
+It lets you view and edit custom object properties used by
+<a href="(../basic_operators/#modifying-mcblend-properties)">Mcblend operators</a>.</p>
 <p><img alt="" src="../img/object_properties.png" /></p>
+<ul>
+<li><em>Export as bone</em> - whether the object should be always exported as
+  independent bone or it can be exported as cube/polymesh and grouped with
+  other objects.</li>
+<li><em>Mesh type (dropdown list)</em> - <em>Cube</em> or <em>Poly mesh</em>. Decides if the object
+  should be exported as a cube or polymesh. Objects with non-cuboid shapes must
+  be polymesh type or you won't be able to export them.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Polymesh models are still experimental Minecraft feature and they could
+even be removed from Minecraft. Experimental features are not allowed on
+marketplace map so keep that in mind if you're making a map for
+marketplace.</p>
+</div>
+<ul>
+<li><em>UV Group (textfield)</em> - displays the <a href="../uv_groups">UV-group</a> name of the
+  selected object.</li>
+<li><em>Mirror</em> - the mirror property is used only during the
+  <a href="../basic_operators/#uv-mapping">UV-mapping</a>. It affects how to map the faces
+  of the object in a same way as Minecraft mirror property of a cube.</li>
+<li><em>Inflate</em> - stores the Minecraft inflate property value of the cube.</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Editing the Inflate value through this panel does not change the dimensions

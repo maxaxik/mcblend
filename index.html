@@ -56,6 +56,16 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating">Updating</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#which-version-should-i-install">Which version should I install</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pre-release-vs-latest-release">Pre-release vs Latest release</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#versioning-system">Versioning system</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -127,15 +137,11 @@
 <p>A Blender addon for creating and animating Minecraft Bedrock Edition models.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li>Importing Minecraft Bedrock Edition models.</li>
-<li>Tools that support Minecraft models:</li>
-<li>Generating Minecraft style UV-mapping (default and per-face UV-mapping),</li>
-<li>Generating textures.</li>
-<li>Exporting keyframe animations.</li>
-<li>Exporting poses of models as a single frame looped animations.</li>
-<li>Mcblend supports models that use Armatures so it's possible to use
-features such as inverse kinematics to your advantage to create animating
-easier. You can also use baked animations with physics.</li>
+<li>Importing and exporting Minecraft Bedrock Edition polymesh and cube based models</li>
+<li>Generating UV-maps and textures for Minecraft models</li>
+<li>Exporting animations</li>
+<li>Exporting poses</li>
+<li>The animated models can use armatures and constraints to make animating easier. Mcblend can detect parts moved by the constraints and add that to Minecraft animations even though they Minecraft don't have this kind of features.</li>
 </ul>
 <h2 id="planned-features">Planned features</h2>
 <p>The improvements planned for this Blender plugin are often listed as
@@ -152,6 +158,26 @@ easier. You can also use baked animations with physics.</li>
 <li>Search for "Mcblend" in Add-ons and select the check box to enable the add-on
 <img alt="" src="img/blender_addons_checkbox.png" /></li>
 </ol>
+<h2 id="updating">Updating</h2>
+<p>Currently there is no system for updating Mcblend. If you want to update than you
+must uninstall the old version of the addon and than install the new one.</p>
+<h2 id="which-version-should-i-install">Which version should I install</h2>
+<h3 id="pre-release-vs-latest-release">Pre-release vs Latest release</h3>
+<p>The top first two releases at the top of the list of releases for Mcblend - <em>Pre-release</em>
+and <em>Latest release</em>. The Pre-release versions are used to quickly deploy a new version
+of Mcblend before updating this user manual. This means that Pre-release versions usually
+have more features and some additional bug-fixes but they are not documented. When
+this user manual is updated the <em>Pre-release</em> is changed to <em>Latest release</em>.</p>
+<h3 id="versioning-system">Versioning system</h3>
+<p>The Mcblend version numbers are created with 3 dot-separated numbers: A.B.C</p>
+<ul>
+<li>A - Compatibility breaking change (some change in the code which may make some
+of the data from the project to be lost in case of upgrading from older version of
+Mcblend)</li>
+<li>B - New features</li>
+<li>C - Bug fixes</li>
+</ul>
+<p>Changing A resets B and C. Changing B resets C.</p>
               
             </div>
           </div>
@@ -205,5 +231,5 @@ easier. You can also use baked animations with physics.</li>
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-12-24 10:31:09.034173+00:00
+Build Date UTC : 2021-03-01 20:20:57.196771+00:00
 -->

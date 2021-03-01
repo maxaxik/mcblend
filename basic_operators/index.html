@@ -74,9 +74,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#uv-mapping">UV-mapping</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#modifying-mcblend-properties">Modifying Mcblend properties</a>
+    <li class="toctree-l2"><a class="reference internal" href="#other-operators">Other operators</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#toggle-mirror-for-uv-mapping">Toggle mirror for UV mapping</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fix-invalid-cube-uv">Fix invalid cube UV</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#set-the-uv-group">Set the UV group</a>
     </li>
@@ -87,6 +89,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#inflate">Inflate</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#round-dimensions">Round dimensions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#separate-cubes">Separate cubes</a>
     </li>
         </ul>
     </li>
@@ -257,7 +261,7 @@ and uses per-face UV mapping.</p>
 you're doing. The faces on the UV must remain rectangles, or the UV of the
 exported model may have unexpected shapes.</p>
 </div>
-<h2 id="modifying-mcblend-properties">Modifying Mcblend properties</h2>
+<h2 id="other-operators">Other operators</h2>
 <p>The "Operators" panel gives access to operators that modify various
 properties used by Mcblend.</p>
 <p><img alt="" src="../img/operators_panel.png" /></p>
@@ -269,6 +273,18 @@ this property are mapped as if they had the Minecraft mirror property.
 Using this operator doesn't remap the UV. If you want to change
 the UV of the object, you must also use the operator from the
 <a href="#uv-mapping">Set bedrock UVs</a> panel to update the UVs.</p>
+<h3 id="fix-invalid-cube-uv">Fix invalid cube UV</h3>
+<p>Fix invalid cube UV operator - as the name suggests - is used to fix invalid
+UV-mapping of the cubes. All faces of the cubes in the Minecraft model must
+be rectangular and have certain rotation. This operator ensures that this
+conditions are true. It's particularly useful when you get an error message
+which says that certain object has invalid UV-mapping and is impossible to
+export.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This operator affects only the selected objects with <em>Cube</em>
+<a href="../gui_changes#object-properties">mesh type</a>.</p>
+</div>
 <h3 id="set-the-uv-group">Set the UV group</h3>
 <p>Adds selected objects to one of the existing <a href="../uv_groups">UV-groups</a>.</p>
 <h3 id="clear-the-uv-group">Clear the UV group</h3>
@@ -284,7 +300,7 @@ independent bone, you need to use this operator.</p>
 <p>The best way of using Mcblend is to have one rig for the model and
 parenting the meshes to bones of that rig. This allows you to take the
 advantage of features like inverse kinematics and also creates a
-model in which it's really easy to distinguish which Blender object becames
+model in which it's really easy to distinguish which Blender object becomes
 what in Minecraft model. Bones will be translated into Minecraft
 bones and meshes into cubes. If you add some empties without children
 they will become the locators.</p>
@@ -297,6 +313,28 @@ viewport. You can use this panel to adjust the "inflate" value.</p>
 <h3 id="round-dimensions">Round dimensions</h3>
 <p>Rounds the dimensions of the object in such way that
 they become integers in exported Minecraft model.</p>
+<h3 id="separate-cubes">Separate cubes</h3>
+<p>Separate cubes can detect cubes grouped in a single mesh and separate them into
+multiple objects. Unlike the <em>Mesh: Separate</em> operator (vanilla blender
+operator), the <em>Separate cubes</em> from Mcblend is designed for working with
+cuboids and can detect their rotations. This is important because the cubes
+(meshes) of the models from Mcblend must be aligned to rotations of the object
+that contain them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you happen to have a mesh with single cube rotated in edit mode 
+(mesh not aligned to object rotation), you can use this operator to fix the
+problem. The operator won't create new objects if there is only one cube
+in the mesh but it will fix the rotation problem.</p>
+</div>
+<p>Images below show the difference between applying <em>Separate cubes</em> and
+<em>Mesh: Separate</em> operators:</p>
+<p><em>Before separating cubes:</em>
+<img alt="" src="../img/separate_cubes_before.png" /></p>
+<p><em>After separating cubes:</em>
+<img alt="" src="../img/separate_cubes_after.png" /></p>
+<p><em>Separated objects after using default blender Mesh-&gt;Separate operator:</em>
+<img alt="" src="../img/separate_cubes_using_mesh_separate.png" /></p>
               
             </div>
           </div>
