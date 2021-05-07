@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/limitations/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/conversion_rules/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/gui_changes/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/basic_operators/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/animating_effects/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/uv_groups/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/texture_customization/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2021-03-01</lastmod>
+     <loc>https://nusiq.github.io/mcblend/tips_and_tricks/</loc>
+     <lastmod>2021-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
