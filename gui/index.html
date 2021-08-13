@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Nusiq">
+  <link rel="canonical" href="https://nusiq.github.io/mcblend/gui/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>GUI - Mcblend</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "GUI";
+    var mkdocs_page_input_path = "gui\\index.md";
+    var mkdocs_page_url = "/mcblend/gui/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mcblend</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../limitations/">Limitations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../conversion_rules/">Conversion rules</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">GUI</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sidebar">Sidebar</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resurce-pack-panel">Resurce Pack panel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#uv-mapping-panel">UV-mapping panel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mesh-transformations-panel">Mesh Transformations panel</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#scene-properties">Scene properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#object-properties-mesh">Object properties (mesh)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#object-properties-armature">Object properties (armature)</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../importing_and_exporting/">Importing and exporting files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../animating_effects/">Animating effects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../uv_groups/">UV-groups</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../texture_customization/">Texture customization (advanced)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips_and_tricks/">Tips and tricks</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mcblend</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>GUI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="gui">GUI</h1>
+<p>Mcblend adds new elements to Blender GUI:</p>
+<ul>
+<li><em>Mcblend</em> tab on <a href="#sidebar">sidebar</a>,</li>
+<li><em>Mcblend: UV-groups</em> and <em>Mcblend: Animation Events</em> tab in the
+  <a href="#scene-properties">Scene Properties</a>,</li>
+<li><em>Mcblend: Object Properties</em> in the <a href="#object-properties-mesh">Object Properties</a>
+  when you have a mesh selected,</li>
+<li><em>Mcblend: Model Properties</em>, <em>Mcblend: Render Controllers</em> and
+  <em>Mcblend: Animations</em> in the <a href="#object-properties-armature">Object Properties</a> when
+  the active object is an armature.</li>
+<li><em>Export bedrock Model</em> and <em>Export Bedrock Animation</em> in the export menu,</li>
+<li><em>Import Bedrock Model</em> in the import menu.</li>
+</ul>
+<h2 id="sidebar">Sidebar</h2>
+<p>The sidebar (the menu that you can open by pressing <code>N</code> button by default) 
+gives access to some of the operators and has a panel which lets
+you quckly import models of the entities from resource packs.</p>
+<p><img alt="" src="../img/side_panel.png" /></p>
+<h3 id="resurce-pack-panel">Resurce Pack panel</h3>
+<p>The resource pack panel lets you connect a resource pack to a project. When
+you have a resource pack connected to your project you can easily an entity
+from a list and import all of its models (if it has multiple) and select
+the texture variant and materials that you can use. The example on the sidebar
+image (above) is more complicated than most of the models that you would 
+normally import, in most cases Mcblend will be able to automatically detect
+which model, material and texture should be used but in some cases it's
+impossible to tell without analysing behavior of the entity when molang queries
+are used. In these situations additional user input is required.</p>
+<h3 id="operators">Operators</h3>
+<h4 id="uv-mapping-panel">UV-mapping panel</h4>
+<ul>
+<li><strong>Fix model UV-mapping</strong> -  operator used to fix invalid UV-mapping of the cubes 
+  of the model. All faces of the cubes in the Minecraft model must
+  be rectangular and have certain rotation. This operator ensures that this
+  conditions are true. It's particularly useful when you get an error message
+  which says that certain object has invalid UV-mapping and is impossible to
+  export. The operator fixes all of the cubes of the model and can be used
+  only when the active object is an armature.</li>
+<li><strong>Set the UV group</strong> - adds selected objects to one of the existing
+  <a href="../uv_groups">UV-groups</a>. This operator can be used when at least one
+  mesh is selected and at least one UV group has been created in your project.</li>
+<li><strong>Clear UV group</strong> - oposite to "Set the UV group". It removes the UV group
+  from the selected objects.</li>
+</ul>
+<h4 id="mesh-transformations-panel">Mesh Transformations panel</h4>
+<ul>
+<li><strong>Inflate</strong> - Inflates the selected object using Minecraft inflate property.
+  Running this operator opens a panel in the bottom left corner of the 3D
+  viewport. You can use this panel to adjust the "inflate" value.
+  <img alt="" src="../img/inflate_redo_panel.png" /></li>
+<li><strong>Round dimensions</strong> -Rounds the dimensions of the object in such way that
+  they become integers in exported Minecraft model.</li>
+<li>
+<p><strong>Separate and align cubes</strong> - Separate cubes can detect cubes grouped in a
+  single mesh and separate them into multiple objects. Unlike the vanilla
+  Blender operator (<em>Mesh -&gt; Separate</em>), the <em>Separate cubes</em> operator
+  from Mcblend is designed for working with cuboids and can detect their
+  rotations. This is important because meshes in Mcblend must be aligned with
+  the rotations of the objects that store them in order to make Mcblend work
+  properly. Additionally if you happen to have a mesh with single cube rotated
+  in edit mode (mesh not aligned to object rotation), you can use this operator
+  to fix the problem. The operator won't create new objects if there is only
+  one cube in the mesh but it will fix the rotation problem.
+  Images below show the difference between applying <em>Separate cubes</em> and
+  <em>Mesh -&gt; Separate</em> operators:
+  <em>Before separating cubes</em>
+  <img alt="" src="../img/separate_cubes_before.png" />
+  <em>Objects separated with Mcblend</em>
+  <img alt="" src="../img/separate_cubes_after.png" />
+  <em>Objects separated using default Blender operator</em>
+  <img alt="" src="../img/separate_cubes_using_mesh_separate.png" /></p>
+</li>
+<li>
+<p><strong>Prepare physics simulation</strong> - this button automatically creates objects
+  which can be used for physics simulation. The simulation starts one frame after
+  the selected frame. It adds ragdoll effect to the model. Newly created
+  objects are added into 3 separate new collections: Rigid Body (a group
+  with rigid body objects with the same shape as the original model), Rigid
+  Body Constraints (a group of empties with rigid body constraints that
+  connect parts of the simulated objects together) and Bone Parents (a group
+  of objects which follow the rigid body and make the original model follow
+  the simulation).
+  <img alt="" src="../img/physics.png" /></p>
+</li>
+</ul>
+<h2 id="scene-properties">Scene properties</h2>
+<p>Scene properties tab has two new panels:</p>
+<ul>
+<li><em>Mcblend: UV-groups</em> - used for <a href="../uv_groups">creating</a> and <a href="../texture_customization">customizing</a> UV-groups.</li>
+<li><em>Mcblend: Animation Events</em> - used for adding events for creating <a href="../animating_effects">sound- and particle-effects animations</a>.</li>
+</ul>
+<p><img alt="" src="../img/scene_properties.png" /></p>
+<h2 id="object-properties-mesh">Object properties (mesh)</h2>
+<p>This is the panel that you cane see when you open object properties of a mesh.</p>
+<p><img alt="" src="../img/object_properties_mesh.png" /></p>
+<p><strong>Mesh type (dropdown list)</strong> - <em>Cube</em> or <em>Poly mesh</em>. Decides if the object
+should be exported as a cube or polymesh. Objects with non-cuboid shapes must
+be polymesh type or you won't be able to export them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Polymesh models are still experimental Minecraft feature and they could
+even be removed from Minecraft. Experimental features are not allowed on
+marketplace so keep that in mind if you're making a map for
+marketplace.</p>
+</div>
+<p><strong>UV Group (textfield)</strong> - displays the <a href="../uv_groups">UV-group</a> name of the
+selected object.</p>
+<p><strong>Mirror</strong> - the mirror property is used only during the
+UV-mapping. It affects the mapping of the faces of the object in a same way as
+Minecraft mirror property of a cube.</p>
+<p><strong>Inflate</strong> - stores the Minecraft inflate property value of the cube.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Editing the Inflate value through this panel does not change the dimensions
+of the object, but it does change the inflate value in the exported object.
+If you want to inflate/deflate the object you should use the
+inflate operator from the sidebar.</p>
+</div>
+<p><strong>Min UV bound</strong> - this property is used during UV-mapping. It defines the
+minimal space on the texture used for a cube. If cube has width, height
+or depth lower than one unit of length, this property can be used to make sure
+that every face will gett some space on the texture. Normally in this case a
+the size of the cube would be rounded down to 0 during UV-mapping and some of
+the faces of the cube wouldn't get any space on the texture. </p>
+<h2 id="object-properties-armature">Object properties (armature)</h2>
+<p>This is the panel that you can see when you open object properties of an
+armature.</p>
+<p><img alt="" src="../img/object_properties_armature.png" /></p>
+<p><strong>Mcblend: Model properties</strong> - this panel has some of the basic properties of
+the minecraft model (like visible bounds widht and height) and someproperties
+used for texture generation.</p>
+<ul>
+<li><em>Allow texture expanding</em> - allows changing the texture width and height during
+UV-mapping.</li>
+<li><em>Generate Texture</em> - generates template texture during UV-mapping
+(UV-mapping without this option sellected will change the UV of the model but
+won't generate any texture file).</li>
+<li><em>Template resolution</em> defines the size of the texture. The real resolution of
+the generated texture image is equal to texture width and hight multiplied
+by texture resolution.</li>
+<li><em>Set minecraft UV</em> button - generates the UV map and texture of the model
+  based on the setting from the properties above.</li>
+</ul>
+<p>To perform the UV-mapping fill in the form and press the "Set Minecraft
+UVs" button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After the UV mapping, you can still go to the UV editor and move everything
+to your liking. This operator tries to arrange the UVs of the selected
+objects on the texture space using the basic non-per-face Minecraft
+UV-mapping. If you move the UV in such a way that it cannot be mapped
+in standard Minecraft UV-mapping way than mcblend will detect that
+and uses per-face UV mapping.</p>
+<p>Don't move individual vertices of the faces on the UV unless you know what
+you're doing. The faces on the UV must remain rectangles, or the UV of the
+exported model may have unexpected shapes.</p>
+</div>
+<p><strong>Mcblend: Render Controllers</strong></p>
+<p>Tihs panel lets you quickly create materials for the model which will look
+very similar to models in Minecraft. You can add multiple render controllers
+to the model and in every render controller you can select single texture and
+multiple materials assigned to the model by name patterns. When you finish
+setting up the render controller you can use the "Apply materials" button to
+automatically create the materials for preview in blender. If you add multiple
+textures and render controllers to your model they'll be stacked on top of each
+other in a same way as in Minecraft.</p>
+<p><strong>Mcblend: Animations</strong></p>
+<p>The animations panel lets you quickly switch between animations. The animations
+in Mcblend are connected to NLA tracks of the armature. Switching the animation
+in the Animations menu will switch the active NLA tracks.</p>
+<ul>
+<li><em>New animation</em> - creates new animation. You can't use this operator while
+  editing an action of the armature. If you want to create a new action you
+  need to stash the action first.</li>
+<li><em>Remove animation</em> - Removes currently active animation.</li>
+<li><em>Select animation (dropdown list)</em> - Lets you select one of the previously
+  created animations.</li>
+<li><em>Name</em> - Sets the name of the animation.</li>
+<li><em>Skip rest poses</em> - During exporting the animation with this checkbox
+  selected will skip adding unnecessary frames which don't affect the movements
+  of the models. In most cases it's recommended to use this option.</li>
+<li><em>Export as pose</em> - Instead of exporting animation the exporter will export
+  a single frame (a pose of the model).</li>
+<li><em>Loop</em> - this property is the same as the loop property from Minecraft
+  animation files. There are three options "true", "false" and
+  "hold_on_last_frame"</li>
+<li><em>Anim Time Update</em> - this property is exactly the same as the
+  anim_time_update property from Minecraft animation files. You should either
+  leave it empty (if you don't want to have "anim_time_update" in your
+  animation) or put molang expression in it. It doesn't affect the animation
+  in Mcblend. It only changes a single property of the exported file.</li>
+<li><em>Frame start</em> - the first frame of the animation.</li>
+<li><em>Frame end</em> - the last frame of the animation.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../importing_and_exporting/" class="btn btn-neutral float-right" title="Importing and exporting files">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../conversion_rules/" class="btn btn-neutral" title="Conversion rules"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Nusiq/mcblend" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../conversion_rules/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../importing_and_exporting/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

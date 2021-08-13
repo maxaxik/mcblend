@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -25,9 +25,8 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -41,7 +40,7 @@
         <a href=".." class="icon icon-home"> Mcblend</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -60,11 +59,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../gui_changes/">GUI changes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../gui/">GUI</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../basic_operators/">Basic Operators</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../importing_and_exporting/">Importing and exporting files</a>
                     </li>
                 </ul>
                 <ul>
@@ -118,6 +117,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -132,13 +132,13 @@ members. You can create some fairly advanced textures with it, but it's usually
 better to create textures in a usual way.</p>
 <h2 id="creating-and-removing-uv-groups">Creating and removing UV-groups</h2>
 <p>UV-groups are added / removed using the "Mcblend UV groups" panel from the
-<a href="../gui_changes/#scene-properties">Scene Properties</a> with "New UV group" and
+<a href="../gui/#scene-properties">Scene Properties</a> with "New UV group" and
 "Delete this UV group" buttons. You can also export and import UV groups by
 using the "Export UV group" and "Import UV group" buttons respectively.</p>
 <h2 id="adding-objects-to-uv-groups">Adding objects to UV-groups</h2>
 <p>Adding object do UV-groups is done with
-<a href="../basic_operators/#set-the-uv-group">Set the UV group</a> button on sidebar. You
-must create at least one UV-group in order to add objects to it.</p>
+<a href="../gui/#uv-mapping-panel">Set the UV group</a> button on sidebar.
+You must create at least one UV-group in order to add objects to it.</p>
               
             </div>
           </div>
@@ -172,19 +172,22 @@ must create at least one UV-group in order to add objects to it.</p>
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/Nusiq/mcblend" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../animating_effects/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../texture_customization/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Nusiq/mcblend" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../animating_effects/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../texture_customization/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>

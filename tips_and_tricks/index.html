@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -25,9 +25,8 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -41,7 +40,7 @@
         <a href=".." class="icon icon-home"> Mcblend</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -60,11 +59,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../gui_changes/">GUI changes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../gui/">GUI</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../basic_operators/">Basic Operators</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../importing_and_exporting/">Importing and exporting files</a>
                     </li>
                 </ul>
                 <ul>
@@ -120,6 +119,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -136,12 +136,12 @@ animation file.</p>
 <p>You can find the framerate setting in <code>Output Properties -&gt; Frame Rate</code>.</p>
 <p><img alt="" src="../img/framerate_setting.png" /></p>
 <h2 id="world-unit-scale">World unit scale</h2>
-<p>By default 1 meter in your model is equal to one block in Minecraft. One meter
-in Minecraft model is 16 pixels on the texture of the model. You might want to
-measure the size in pixels instead of meters. You can change the setting that
-you can find under <code>Scene properties -&gt; Unit scale</code>. Changing the value
-of this property to 16 will cause that one meter of your Blender model will be
-converted into 1 pixel in Minecraft.</p>
+<p>By default 1 meter in Blender is equal to one block in Minecraft. One
+Minecraft meter is 16 units of length of the model. You might want to
+measure the size of the model using these units instead of meters. You can
+go to <code>Scene properties -&gt; Unit scale</code> to scale the units used in blender.
+Changing the value of this property to 16 will cause that one length unit in
+Blender model will be equal to one length unit of your model.</p>
 <p><img alt="" src="../img/unit_scale_setting.png" /></p>
 <h2 id="creating-materials">Creating materials</h2>
 <p>Currently the addon doesn't create materials for your model during UV mapping
@@ -197,17 +197,20 @@ model.</p>
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/Nusiq/mcblend" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../texture_customization/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Nusiq/mcblend" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../texture_customization/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
